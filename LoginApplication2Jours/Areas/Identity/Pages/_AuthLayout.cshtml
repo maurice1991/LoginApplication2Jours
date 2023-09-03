@@ -1,0 +1,14 @@
+﻿@{
+	Layout = "/views/Shared/_Layout.cshtml";
+}
+
+
+ 
+@RenderBody()
+
+
+
+
+@section Scripts {
+    @await RenderSectionAsync("Scripts", required: false)
+}
