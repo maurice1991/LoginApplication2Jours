@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,11 +12,13 @@ namespace LoginApplication2Jours.Areas.Identity.Data;
 public class User : IdentityUser
 {
     [PersonalData]
+    [Required]
     [Column(TypeName ="nvarchar(100)")]
     public required string FirstName  { get; set; } 
 
     [PersonalData]
+    [Required]
     [Column(TypeName = "nvarchar(100)")]
-    public required string LasttName { get; set; }
+    public  required string LastName { get; set; }
 }
 

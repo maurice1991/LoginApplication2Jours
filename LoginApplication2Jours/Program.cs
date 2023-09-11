@@ -11,13 +11,15 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-// Toegevoegd mvo 1-9-2023
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(); 
 
 
 builder.Services.Configure<IdentityOptions>(options => { 
-    options.Password.RequireUppercase = false;
     
+    options.Password.RequireUppercase = false; 
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+
 });
 
 var app = builder.Build();
